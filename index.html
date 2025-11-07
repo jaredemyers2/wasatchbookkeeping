@@ -1,255 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wasatch Bookkeeping | Better Books. Better Business.</title>
-  
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-  
-  <style>
-    /* === Base Styles === */
-    :root {
-      --teal: #2E8B8B;
-      --navy: #193247;
-      --light-gray: #F7F9FA;
-      --dark-gray: #333;
-      --white: #fff;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wasatch Bookkeeping | Better Books. Better Business.</title>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* === Base Styles === */
+    :root {
+      --teal: #2E8B8B;
+      --navy: #193247;
+      --light-gray: #F7F9FA;
+      --dark-gray: #333;
+      --white: #fff;
+    }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    body {
-      font-family: 'Lato', sans-serif;
-      color: var(--dark-gray);
-      background-color: var(--white);
-      line-height: 1.6;
-    }
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--dark-gray);
+      background-color: var(--white);
+      line-height: 1.6;
+    }
 
-    a {
-      text-decoration: none;
-      color: var(--teal);
-    }
+    a {
+      text-decoration: none;
+      color: var(--teal);
+    }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 5%;
-      background-color: var(--white);
-      border-bottom: 1px solid #eee;
-    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      background-color: var(--white);
+      border-bottom: 1px solid #eee;
+    }
 
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      color: var(--navy);
-      font-size: 1.8rem;
-      letter-spacing: 0.5px;
-    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--navy);
+      font-size: 1.8rem;
+      letter-spacing: 0.5px;
+    }
 
-    nav a {
-      margin-left: 1.5rem;
-      font-weight: 600;
-    }
+    nav a {
+      margin-left: 1.5rem;
+      font-weight: 600;
+    }
 
-    /* === Hero Section === */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 5rem 2rem;
-      background-color: var(--light-gray);
-      background-image: url('https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?auto=format&fit=crop&w=1400&q=80');
-      background-size: cover;
-      background-position: center;
-      color: var(--white);
-      position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(25, 50, 71, 0.6);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 700px;
-    }
-
-    .hero h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: var(--white);
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-
-    .btn-primary {
-      background-color: var(--teal);
-      color: var(--white);
-      padding: 0.9rem 1.8rem;
-      border-radius: 5px;
-      font-weight: 700;
-      transition: 0.3s;
-    }
-
-    .btn-primary:hover {
-      background-color: #257070;
-    }
-
-    /* === Services Section === */
-    .services {
-      padding: 5rem 5%;
-      background-color: var(--white);
-      text-align: center;
-    }
-
-    .services h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--navy);
-      margin-bottom: 2rem;
-      font-size: 2rem;
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .service {
-      background: var(--light-gray);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    }
-
-    .service h4 {
-      color: var(--teal);
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-    }
-
-    /* === Contact Section === */
-    .contact {
-      padding: 4rem 5%;
-      background-color: var(--light-gray);
-      text-align: center;
-    }
-
-    .contact h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--navy);
-      margin-bottom: 1rem;
-      font-size: 2rem;
-    }
-
-    /* === About Section === */
-    .about {
+    /* === Hero Section === */
+    .hero {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 5rem 5%;
-      background-color: var(--teal); /* Matching the Wenonah Bookkeeping site */
+      text-align: center;
+      padding: 5rem 2rem;
+      background-color: var(--light-gray);
+      background-image: url('https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
       color: var(--white);
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(25, 50, 71, 0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-primary {
+      background-color: var(--teal);
+      color: var(--white);
+      padding: 0.9rem 1.8rem;
+      border-radius: 5px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #257070;
+    }
+
+    /* === Services Section === */
+    .services {
+      padding: 5rem 5%;
+      background-color: var(--white);
       text-align: center;
     }
 
-    .about .profile-photo {
-      width: 200px; /* Adjust as needed */
-      height: 200px; /* Adjust as needed */
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 2rem;
-      border: 5px solid var(--white); /* White border around the image */
-    }
-
-    .about h3 {
+    .services h3 {
       font-family: 'Playfair Display', serif;
+      color: var(--navy);
+      margin-bottom: 2rem;
       font-size: 2rem;
-      margin-bottom: 1.5rem;
     }
 
-    .about p {
-      max-width: 700px;
-      font-size: 1.1rem;
-      line-height: 1.8;
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
+    .service {
+      background: var(--light-gray);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: var(--navy);
-      color: var(--white);
-      font-size: 0.9rem;
-    }
-  </style>
+    .service h4 {
+      color: var(--teal);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    /* === Contact Section === */
+    .contact {
+      padding: 4rem 5%;
+      background-color: var(--light-gray);
+      text-align: center;
+    }
+
+    .contact h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 
 <body>
-  <header>
-    <h1>Wasatch Bookkeeping</h1>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <header>
+    <h1>Wasatch Bookkeeping</h1>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Better Books. Better Business.</h2>
-      <p>We keep your books accurate, organized, and up to date — so you can focus on running your business.</p>
-      <a href="#contact" class="btn-primary">Book a Call With Jared</a>
-	  <a href="#contact" class="btn btn-primary">Send me a quick quote</a>
-    </div>
-  </section>
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Better Books. Better Business.</h2>
+      <p>Messy books kill clarity. I keep your QuickBooks clean, your financials accurate, and your stress level low — with real communication from someone who actually responds.</p>
+      <a href="#contact" class="btn-primary">Get in Touch</a>
+    </div>
+  </section>
 
-  <section id="services" class="services">
-    <h3>What I Offer</h3>
-    <div class="service-grid">
-      <div class="service">
-        <h4>Monthly Bookkeeping</h4>
-        <p>Accurate transaction recording and reconciliations to keep your books current.</p>
-      </div>
-      <div class="service">
-        <h4>Cleanup & Catch-Up</h4>
-        <p>Fix past bookkeeping mistakes and get your financials back in shape.</p>
-      </div>
-      <div class="service">
-        <h4>Reporting</h4>
-        <p>Clear Profit & Loss and Balance Sheet reports to help you make smarter business decisions.</p>
-      </div>
-    </div>
-  </section>
+  <section id="services" class="services">
+    <h3>What I Offer</h3>
+    <div class="service-grid">
+      <div class="service">
+        <h4>Monthly Bookkeeping</h4>
+        <p>Accurate transaction recording and reconciliations to keep your books current.</p>
+      </div>
+      <div class="service">
+        <h4>Cleanup & Catch-Up</h4>
+        <p>Fix past bookkeeping mistakes and get your financials back in shape.</p>
+      </div>
+      <div class="service">
+        <h4>Reporting</h4>
+        <p>Clear Profit & Loss and Balance Sheet reports to help you make smarter business decisions.</p>
+      </div>
+    </div>
+  </section>
 
-  <section id="contact" class="contact">
-    <h3>Let’s Get Started</h3>
-    <p>Email me at <a href="mailto:jared@wasatchbookkeeping.com">jared@wasatchbookkeeping.com</a></p>
-  </section>
+  <section id="contact" class="contact">
+    <h3>Let’s Get Started</h3>
+    <p>Email me at <a href="mailto:jared@wasatchbookkeeping.com">jared@wasatchbookkeeping.com</a></p>
+  </section>
 
-  <section class="about">
-    
-<h3>Meet Jared</h3>
-    <p>Hi, I’m Jared Myers — owner of Wasatch Bookkeeping. I help small business owners stay organized, confident, and ready for tax season year-round.</p>
-  </section>
-
-  <footer>
-    <p>© 2025 Wasatch Bookkeeping — Accurate, Organized, Reliable.</p>
-  </footer>
+  <footer>
+    <p>© 2025 Wasatch Bookkeeping — Accurate, Organized, Reliable.</p>
+  </footer>
 </body>
 </html>
