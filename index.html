@@ -5,18 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wasatch Bookkeeping | Better Books. Better Business.</title>
 
-  <!-- Fonts -->
+  <!-- Fonts: Open Sans (Body) and Playfair Display (Headings) -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <!-- Load Tailwind CSS for utility classes (used only for general best practice, main styling is custom) -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+    /* * REFINED COLOR SCHEME FOR A SOFTER, CLEANER AESTHETIC 
+     * Matches the light, approachable tones of the headshot, using Brand Teal (#2f8e8c) 
+     * as the primary accent color.
+     */
     :root {
-      --navy: #1c2a38;
-      --teal: #2f8e8c;
-      --light-blue: #f1f5f7;
-      --dark-gray: #333;
+      /* Primary contrast color, softer and more modern than the original navy */
+      --charcoal-blue: #2B3D50; 
+      /* Primary Brand Color (Buttons, Footer, H4s, Logo) */
+      --brand-teal: #2f8e8c;    
+      /* Light Background Color (Hero, Service Cards) */
+      --light-bg: #f1f5f7;      
+      /* Softer body text color (replacing harsh #333) */
+      --text-gray: #4A5568;     
       --white: #fff;
     }
 
+    /* Base Reset */
     * {
       margin: 0;
       padding: 0;
@@ -25,36 +36,41 @@
 
     body {
       font-family: 'Open Sans', sans-serif;
-      color: var(--dark-gray);
+      color: var(--text-gray); 
       background-color: var(--white);
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
+    /* === Header and Navigation === */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1.5rem 5%;
       background-color: var(--white);
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid var(--light-bg); 
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     header h1 {
       font-family: 'Playfair Display', serif;
-      color: var(--navy);
+      color: var(--brand-teal); /* Logo is Brand Teal */
       font-size: 1.8rem;
     }
 
     nav a {
-      color: var(--navy);
+      color: var(--charcoal-blue); /* Navigation links use dark charcoal */
       font-weight: 600;
       margin-left: 1.5rem;
       text-decoration: none;
-      transition: 0.3s;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      color: var(--teal);
+      color: var(--brand-teal); /* Teal on hover */
     }
 
     /* === Hero Section === */
@@ -64,7 +80,8 @@
       align-items: center;
       justify-content: center;
       padding: 5rem 8%;
-      background-color: var(--light-blue);
+      background-color: var(--light-bg); /* Light background */
+      border-radius: 0 0 8px 8px; 
     }
 
     .hero-content {
@@ -76,24 +93,28 @@
     .hero h2 {
       font-family: 'Playfair Display', serif;
       font-size: 2.6rem;
-      color: var(--navy);
+      color: var(--charcoal-blue); /* Headings use dark charcoal */
       margin-bottom: 1rem;
+      white-space: nowrap; /* FORCED SINGLE LINE */
     }
 
     .hero p {
       font-size: 1.1rem;
       margin-bottom: 2rem;
-      color: var(--dark-gray);
+      color: var(--text-gray);
     }
 
+    /* Primary Button Style */
     .btn-primary {
-      background-color: var(--teal);
+      background-color: var(--brand-teal);
       color: var(--white);
       padding: 0.9rem 1.8rem;
       border-radius: 6px;
       font-weight: 600;
-      transition: 0.3s;
+      transition: background-color 0.3s;
+      text-decoration: none;
       display: inline-block;
+      box-shadow: 0 4px 8px rgba(47, 142, 140, 0.3); 
     }
 
     .btn-primary:hover {
@@ -109,8 +130,10 @@
     .hero-image img {
       width: 320px;
       height: auto;
+      max-width: 100%;
       border-radius: 10px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      object-fit: cover;
     }
 
     @media (max-width: 800px) {
@@ -121,10 +144,7 @@
 
       .hero-content {
         max-width: 100%;
-      }
-
-      .hero-image {
-        margin-bottom: 2rem;
+        padding-top: 0;
       }
     }
 
@@ -137,7 +157,7 @@
 
     .services h3 {
       font-family: 'Playfair Display', serif;
-      color: var(--navy);
+      color: var(--charcoal-blue);
       margin-bottom: 2rem;
       font-size: 2rem;
     }
@@ -149,36 +169,62 @@
     }
 
     .service {
-      background: var(--light-blue);
+      background: var(--light-bg); /* Light card background */
       padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: left;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .service:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(47, 142, 140, 0.2); 
     }
 
     .service h4 {
-      color: var(--teal);
+      color: var(--brand-teal); /* Teal service titles */
       margin-bottom: 1rem;
       font-size: 1.2rem;
+      font-weight: 700;
     }
 
     /* === Contact Section === */
     .contact {
       padding: 4rem 8%;
-      background-color: var(--light-blue);
+      background-color: var(--white); 
       text-align: center;
+      border-top: 1px solid var(--light-bg);
     }
 
     .contact h3 {
       font-family: 'Playfair Display', serif;
-      color: var(--navy);
+      color: var(--charcoal-blue);
       margin-bottom: 1rem;
       font-size: 2rem;
     }
+    
+    .contact p {
+        font-size: 1.1rem;
+        color: var(--text-gray);
+    }
+    
+    .contact a {
+        color: var(--brand-teal);
+        text-decoration: underline;
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+    
+    .contact a:hover {
+        color: var(--charcoal-blue);
+    }
 
+    /* === Footer === */
     footer {
       text-align: center;
       padding: 2rem;
-      background: var(--navy);
+      background: var(--brand-teal); /* Brand Teal footer */
       color: var(--white);
       font-size: 0.9rem;
     }
@@ -201,7 +247,12 @@
       <a href="#contact" class="btn-primary">Get in Touch</a>
     </div>
     <div class="hero-image">
-      <img src="Jared_Myers3.jpg" alt="Jared Myers Headshot">
+      <!-- Image URL is relative (Jared_Myers3.jpg) and assumed to exist locally. -->
+      <img 
+        src="Jared_Myers3.jpg" 
+        alt="Jared Myers Headshot"
+        onerror="this.onerror=null;this.src='https://placehold.co/320x320/2f8e8c/fff?text=Headshot';"
+      >
     </div>
   </section>
 
@@ -210,22 +261,23 @@
     <div class="service-grid">
       <div class="service">
         <h4>Monthly Bookkeeping</h4>
-        <p>Accurate transaction recording and reconciliations to keep your books current.</p>
+        <p>Accurate transaction recording and reconciliations to keep your books current, providing you with peace of mind every month.</p>
       </div>
       <div class="service">
         <h4>Cleanup & Catch-Up</h4>
-        <p>Fix past bookkeeping mistakes and get your financials back in shape.</p>
+        <p>Fix past bookkeeping mistakes, reconcile outstanding periods, and get your financials back in accurate, auditable shape quickly.</p>
       </div>
       <div class="service">
-        <h4>Reporting</h4>
-        <p>Clear Profit & Loss and Balance Sheet reports to help you make smarter business decisions.</p>
+        <h4>Reporting & Analysis</h4>
+        <p>Clear Profit & Loss and Balance Sheet reports with analysis to help you make smarter, forward-looking business decisions.</p>
       </div>
     </div>
   </section>
 
   <section id="contact" class="contact">
     <h3>Let’s Get Started</h3>
-    <p>Email me at <a href="mailto:jared@wasatchbookkeeping.com">jared@wasatchbookkeeping.com</a></p>
+    <p>Ready for reliable books? Email me directly:</p>
+    <p><a href="mailto:jared@wasatchbookkeeping.com">jared@wasatchbookkeeping.com</a></p>
   </section>
 
   <footer>
