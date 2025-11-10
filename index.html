@@ -5,29 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wasatch Bookkeeping | Better Books. Better Business.</title>
 
-  <!-- Fonts: Open Sans (Body) and Playfair Display (Headings) -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-  <!-- Load Tailwind CSS for utility classes (used only for general best practice, main styling is custom) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    /* * REFINED COLOR SCHEME FOR A SOFTER, CLEANER AESTHETIC 
-     * Matches the light, approachable tones of the headshot, using Brand Teal (#2f8e8c) 
-     * as the primary accent color.
-     */
     :root {
-      /* Primary contrast color, softer and more modern than the original navy */
-      --charcoal-blue: #2B3D50; 
-      /* Primary Brand Color (Buttons, Footer, H4s, Logo) */
-      --brand-teal: #2f8e8c;    
-      /* Light Background Color (Hero, Service Cards) */
-      --light-bg: #f1f5f7;      
-      /* Softer body text color (replacing harsh #333) */
-      --text-gray: #4A5568;     
+      --charcoal-blue: #2B3D50;
+      --brand-teal: #2f8e8c;
+      --light-bg: #f1f5f7;
+      --text-gray: #4A5568;
       --white: #fff;
     }
 
-    /* Base Reset */
     * {
       margin: 0;
       padding: 0;
@@ -36,41 +26,83 @@
 
     body {
       font-family: 'Open Sans', sans-serif;
-      color: var(--text-gray); 
+      color: var(--text-gray);
       background-color: var(--white);
       line-height: 1.6;
       scroll-behavior: smooth;
     }
 
-    /* === Header and Navigation === */
+    /* === Header and Navigation (Wenonah-style) === */
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 5%;
       background-color: var(--white);
-      border-bottom: 1px solid var(--light-bg); 
+      border-bottom: 1px solid var(--light-bg);
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 20;
+      padding: 0.5rem 4%;
     }
 
-    header h1 {
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-left h1 {
       font-family: 'Playfair Display', serif;
-      color: var(--brand-teal); /* Logo is Brand Teal */
-      font-size: 1.8rem;
+      color: var(--brand-teal);
+      font-size: 1.6rem;
+      margin: 0;
     }
 
-    nav a {
-      color: var(--charcoal-blue); /* Navigation links use dark charcoal */
+    .nav-center {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-center a {
+      color: var(--charcoal-blue);
       font-weight: 600;
-      margin-left: 1.5rem;
       text-decoration: none;
       transition: color 0.3s;
     }
 
-    nav a:hover {
-      color: var(--brand-teal); /* Teal on hover */
+    .nav-center a:hover {
+      color: var(--brand-teal);
+    }
+
+    .nav-right .phone-btn {
+      background-color: var(--brand-teal);
+      color: var(--white);
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      box-shadow: 0 4px 8px rgba(47, 142, 140, 0.25);
+    }
+
+    .nav-right .phone-btn:hover {
+      background-color: #277978;
+    }
+
+    @media (max-width: 900px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .nav-center {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .nav-right {
+        margin-top: 0.5rem;
+      }
     }
 
     /* === Hero Section === */
@@ -80,8 +112,8 @@
       align-items: center;
       justify-content: center;
       padding: 5rem 8%;
-      background-color: var(--light-bg); /* Light background */
-      border-radius: 0 0 8px 8px; 
+      background-color: var(--light-bg);
+      border-radius: 0 0 8px 8px;
     }
 
     .hero-content {
@@ -92,10 +124,11 @@
 
     .hero h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
-      color: var(--charcoal-blue); /* Headings use dark charcoal */
+      font-size: 2.8rem;
+      color: var(--charcoal-blue);
       margin-bottom: 1rem;
-      white-space: nowrap; /* FORCED SINGLE LINE */
+      line-height: 1.2;
+      white-space: normal;
     }
 
     .hero p {
@@ -104,7 +137,6 @@
       color: var(--text-gray);
     }
 
-    /* Primary Button Style */
     .btn-primary {
       background-color: var(--brand-teal);
       color: var(--white);
@@ -114,7 +146,7 @@
       transition: background-color 0.3s;
       text-decoration: none;
       display: inline-block;
-      box-shadow: 0 4px 8px rgba(47, 142, 140, 0.3); 
+      box-shadow: 0 4px 8px rgba(47, 142, 140, 0.3);
     }
 
     .btn-primary:hover {
@@ -132,7 +164,7 @@
       height: auto;
       max-width: 100%;
       border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
       object-fit: cover;
     }
 
@@ -169,21 +201,21 @@
     }
 
     .service {
-      background: var(--light-bg); /* Light card background */
+      background: var(--light-bg);
       padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
       text-align: left;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    
+
     .service:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 15px rgba(47, 142, 140, 0.2); 
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(47, 142, 140, 0.2);
     }
 
     .service h4 {
-      color: var(--brand-teal); /* Teal service titles */
+      color: var(--brand-teal);
       margin-bottom: 1rem;
       font-size: 1.2rem;
       font-weight: 700;
@@ -192,7 +224,7 @@
     /* === Contact Section === */
     .contact {
       padding: 4rem 8%;
-      background-color: var(--white); 
+      background-color: var(--white);
       text-align: center;
       border-top: 1px solid var(--light-bg);
     }
@@ -203,28 +235,28 @@
       margin-bottom: 1rem;
       font-size: 2rem;
     }
-    
+
     .contact p {
-        font-size: 1.1rem;
-        color: var(--text-gray);
+      font-size: 1.1rem;
+      color: var(--text-gray);
     }
-    
+
     .contact a {
-        color: var(--brand-teal);
-        text-decoration: underline;
-        font-weight: 600;
-        transition: color 0.3s;
+      color: var(--brand-teal);
+      text-decoration: underline;
+      font-weight: 600;
+      transition: color 0.3s;
     }
-    
+
     .contact a:hover {
-        color: var(--charcoal-blue);
+      color: var(--charcoal-blue);
     }
 
     /* === Footer === */
     footer {
       text-align: center;
       padding: 2rem;
-      background: var(--brand-teal); /* Brand Teal footer */
+      background: var(--brand-teal);
       color: var(--white);
       font-size: 0.9rem;
     }
@@ -232,30 +264,42 @@
 </head>
 
 <body>
+  <!-- === Navigation Header === -->
   <header>
-    <h1>Wasatch Bookkeeping</h1>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="nav-container">
+      <div class="nav-left">
+        <h1>Wasatch Bookkeeping</h1>
+      </div>
+
+      <nav class="nav-center">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <a href="tel:801-555-1234" class="phone-btn">801-555-1234</a>
+      </div>
+    </div>
   </header>
 
+  <!-- === Hero Section === -->
   <section class="hero">
     <div class="hero-content">
       <h2>Better Books.<br>Better Business.</h2>
       <p>Messy books kill clarity. I keep your QuickBooks clean, your financials accurate, and your stress level low — with real communication from someone who actually responds.</p>
       <a href="#contact" class="btn-primary">Get in Touch</a>
     </div>
+
     <div class="hero-image">
-      <!-- Image URL is relative (Jared_Myers4.jpg) and assumed to exist locally. -->
-      <img 
-        src="Jared_Myers4.jpg" 
-        alt="Jared Myers Headshot"
-        onerror="this.onerror=null;this.src='https://placehold.co/320x320/2f8e8c/fff?text=Headshot';"
-      >
+      <img src="Jared_Myers4.jpg" alt="Jared Myers Headshot"
+        onerror="this.onerror=null;this.src='https://placehold.co/320x320/2f8e8c/fff?text=Headshot';">
     </div>
   </section>
 
+  <!-- === Services Section === -->
   <section id="services" class="services">
     <h3>What I Offer</h3>
     <div class="service-grid">
@@ -274,12 +318,14 @@
     </div>
   </section>
 
+  <!-- === Contact Section === -->
   <section id="contact" class="contact">
     <h3>Let’s Get Started</h3>
     <p>Ready for reliable books? Email me directly:</p>
     <p><a href="mailto:jared@wasatchbookkeeping.com">jared@wasatchbookkeeping.com</a></p>
   </section>
 
+  <!-- === Footer === -->
   <footer>
     <p>© 2025 Wasatch Bookkeeping — Accurate, Organized, Reliable.</p>
   </footer>
