@@ -2,12 +2,14 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wasatch Bookkeeping | Pricing</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
@@ -19,12 +21,21 @@
       --white: #fff;
     }
 
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background: var(--white);
-      color: var(--text-gray);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text-gray);
+      background-color: var(--white);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* ====== HEADER ====== */
     header {
       background-color: var(--white);
       border-bottom: 1px solid var(--light-bg);
@@ -35,20 +46,21 @@
     }
 
     .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
+    /* NEW SMALLER LOGO SIZE */
     .nav-left img {
       width: 160px;
       height: auto;
       display: block;
     }
 
-    @media(max-width:700px) {
+    @media (max-width: 700px) {
       .nav-left img {
         width: 120px;
       }
@@ -61,187 +73,288 @@
 
     .nav-center a {
       color: var(--charcoal-blue);
-      text-decoration: none;
       font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s;
     }
 
-    .nav-center a:hover {
+    .nav-center a:hover,
+    .nav-center a.active-link {
       color: var(--brand-teal);
     }
 
-    .nav-right a {
-      background: var(--brand-teal);
+    .nav-right .phone-btn {
+      background-color: var(--brand-teal);
+      color: var(--white);
       padding: 0.6rem 1.2rem;
-      border-radius: 6px;
-      color: white;
+      border-radius: 5px;
       font-weight: 600;
       text-decoration: none;
+      transition: background-color 0.3s;
       box-shadow: 0 4px 8px rgba(47, 142, 140, 0.25);
     }
 
-    /* Page Title */
-    .page-header {
+    .nav-right .phone-btn:hover {
+      background-color: #277978;
+    }
+
+    @media (max-width: 900px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .nav-center {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .nav-right {
+        margin-top: 0.5rem;
+      }
+    }
+
+    /* ====== PRICING SECTION ====== */
+    .pricing-section {
+      padding: 5rem 8%;
+      background-color: var(--white);
       text-align: center;
-      padding: 4rem 1rem;
-      background-color: var(--light-bg);
+      min-height: calc(100vh - 140px);
+    }
+
+    .pricing-section h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--charcoal-blue);
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+
+    .pricing-section p.lead {
+      font-size: 1.1rem;
+      color: var(--charcoal-blue);
+      margin-bottom: 3rem;
+    }
+
+    .pricing-card {
+      background: var(--light-bg);
+      padding: 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      text-align: left;
+      margin: 3rem auto 2rem;
+      max-width: 650px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(47, 142, 140, 0.2);
+    }
+
+    .pricing-section h3 {
+      color: var(--brand-teal);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .price-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: var(--text-gray);
+    }
+
+    .price-point strong {
       color: var(--charcoal-blue);
     }
 
-    .page-header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-    }
-
-    .page-header p {
+    .price-point i {
+      color: var(--brand-teal);
       font-size: 1.2rem;
-    }
-
-    /* Pricing Section */
-    .pricing-section {
-      max-width: 1100px;
-      margin: 3rem auto;
-      padding: 1rem;
+      margin-top: 0.2rem;
     }
 
     .price-highlight {
-      background: var(--brand-teal);
-      color: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      font-size: 1.5rem;
+      background-color: var(--brand-teal);
+      color: var(--white);
+      padding: 1.2rem;
+      border-radius: 8px;
+      font-size: 1.4rem;
       font-weight: 700;
-      margin-bottom: 2rem;
+      margin: 2.5rem 0 1.5rem;
       text-align: center;
-      box-shadow: 0 4px 15px rgba(47, 142, 140, 0.35);
+      box-shadow: 0 4px 10px rgba(47, 142, 140, 0.25);
     }
 
     .price-highlight span {
-      display: block;
       font-size: 2.4rem;
-      margin-top: 0.5rem;
-    }
-
-    .price-box {
-      background: var(--light-bg);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      margin-bottom: 2.5rem;
-    }
-
-    .price-box h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      color: var(--charcoal-blue);
-      margin-bottom: 1.2rem;
+      font-weight: 600;
     }
 
-    .price-box ul {
-      padding-left: 1.2rem;
-      line-height: 1.7;
+    @media (max-width: 600px) {
+      .pricing-card {
+        padding: 1.5rem;
+      }
     }
 
-    .cta-area {
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    .cta-area a {
-      background: var(--brand-teal);
-      color: white;
-      padding: 1rem 1.6rem;
-      border-radius: 10px;
-      font-weight: 700;
+    .call-btn-large {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.9rem 1.6rem;
+      border-radius: 6px;
+      font-weight: 600;
       text-decoration: none;
-      font-size: 1.1rem;
-      box-shadow: 0 5px 15px rgba(47, 142, 140, 0.3);
+      font-size: 1rem;
+      background-color: var(--brand-teal);
+      color: var(--white);
+      box-shadow: 0 4px 12px rgba(47, 142, 140, 0.3);
+      transition: all 0.3s ease;
+      margin-top: 1.5rem;
     }
 
-    .cta-area a:hover {
-      background: #277978;
+    .call-btn-large:hover {
+      background-color: #277978;
+      transform: translateY(-2px);
+    }
+
+    .quote-info {
+      margin-top: 1.5rem;
+      padding: 1rem 1.5rem;
+      border: 1px solid var(--brand-teal);
+      border-radius: 6px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--charcoal-blue);
+    }
+
+    /* ====== CONTACT ====== */
+    .contact {
+      padding: 4rem 8%;
+      background-color: var(--white);
+      text-align: center;
+      border-top: 1px solid var(--light-bg);
+    }
+
+    .contact h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--charcoal-blue);
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    .contact a {
+      color: var(--brand-teal);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .contact a:hover {
+      color: var(--charcoal-blue);
     }
 
     footer {
-      background: var(--brand-teal);
-      padding: 2rem;
       text-align: center;
-      color: white;
-      margin-top: 4rem;
+      padding: 2rem;
+      background: var(--brand-teal);
+      color: var(--white);
+      font-size: 0.9rem;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Header -->
+  <!-- ===== HEADER ===== -->
   <header>
     <div class="nav-container">
+
       <div class="nav-left">
-        <img src="WasatchBookkeepingLogo.jpg" alt="Logo">
+        <img src="WasatchBookkeepingLogo.jpg" alt="Wasatch Bookkeeping Logo">
       </div>
 
       <nav class="nav-center">
         <a href="index.html">Home</a>
         <a href="index.html#about">About</a>
         <a href="index.html#services">Services</a>
-        <a href="pricing.html">Pricing</a>
+        <a href="pricing.html" class="active-link">Pricing</a>
         <a href="index.html#about">Store</a>
         <a href="index.html#testimonials">Testimonials</a>
         <a href="index.html#contact">Contact</a>
       </nav>
 
       <div class="nav-right">
-        <a href="tel:801-830-1787">801-830-1787</a>
+        <a href="tel:801-830-1787" class="phone-btn">801-830-1787</a>
       </div>
+
     </div>
   </header>
 
-  <!-- Title -->
-  <section class="page-header">
-    <h1>Pricing</h1>
-    <p>Simple. Transparent. Custom-fit to your business.</p>
+  <!-- ===== PRICING ===== -->
+  <section id="pricing" class="pricing-section">
+    <h2>Pricing</h2>
+    <p class="lead">Our packages are designed to give you peace of mind and tax-ready financials every month.</p>
+
+    <div class="pricing-card">
+      <h3>All Monthly Packages Include:</h3>
+
+      <div class="price-point">
+        <i class="fa-solid fa-check-circle"></i>
+        <strong>Weekly Transaction Categorization</strong> (No more guessing what a charge was for a month later.)
+      </div>
+
+      <div class="price-point">
+        <i class="fa-solid fa-check-circle"></i>
+        <strong>Monthly Account Reconciliations</strong> (All Bank & Credit Card Accounts)
+      </div>
+
+      <div class="price-point">
+        <i class="fa-solid fa-check-circle"></i>
+        <strong>Monthly Financial Statements</strong> (P&L, Balance Sheet)
+      </div>
+
+      <div class="price-point">
+        <i class="fa-solid fa-check-circle"></i>
+        <strong>Dedicated Weekly Service Day</strong> with proactive communication (“Your day” means guaranteed attention)
+      </div>
+
+      <div class="price-highlight">
+        Packages Start at <br>
+        <span>$200/month</span>
+      </div>
+
+      <div class="quote-info">
+        Your final rate is based on your account volume and business complexity.
+        More transactions or advanced features (like class tracking) may increase the monthly fee.
+      </div>
+    </div>
+
+    <p style="margin-top: 2.5rem; font-size: 1.1rem;">
+      Call now for a free quote.
+    </p>
+
+    <a href="https://calendly.com/jaredemyers/needs-assessment" class="call-btn-large">
+      <i class="fa-solid fa-phone"></i> BOOK A CALL WITH JARED
+    </a>
   </section>
 
-  <!-- Pricing Section -->
-  <section class="pricing-section">
-
-    <div class="price-highlight">
-      Packages Start At <br>
-      <span>$200/month</span>
-    </div>
-
-    <div class="price-box">
-      <h2>All Monthly Plans Include:</h2>
-      <ul>
-        <li>✔ Monthly transaction categorizing</li>
-        <li>✔ Bank, credit card & loan reconciliations</li>
-        <li>✔ Monthly Profit & Loss and Balance Sheet reports</li>
-        <li>✔ Email & text support</li>
-        <li>✔ Unlimited questions</li>
-        <li>✔ Quarterly review call (optional)</li>
-      </ul>
-    </div>
-
-    <div class="price-box">
-      <h2>Catch-Up & Clean-Up Work</h2>
-      <ul>
-        <li>Get your books fully cleaned, corrected, and up to date.</li>
-        <li>Pricing depends on number of months & complexity.</li>
-        <li>Most clean-ups fall between **$300–$900 total**.</li>
-      </ul>
-    </div>
-
-    <div class="cta-area">
-      <a href="https://calendly.com/jaredemyers/needs-assessment">
-        Book a Free Needs Assessment
-      </a>
-    </div>
-
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="contact">
+    <h3>Let’s Connect</h3>
+    <p>Contact me directly:</p>
+    <p>801-830-1787</p>
+    <p>Email: <a href="mailto:jared@wasatchbookkeeping.com">jared@wasatchbookkeeping.com</a></p>
   </section>
 
   <footer>
-    © 2025 Wasatch Bookkeeping — Transparent. Accurate. Reliable.
+    <p>© 2025 Wasatch Bookkeeping — Accurate, Organized, Reliable.</p>
   </footer>
 
 </body>
