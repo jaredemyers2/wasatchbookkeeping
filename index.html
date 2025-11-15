@@ -53,10 +53,17 @@
       margin: 0 auto;
     }
 
+    /* === LOGO SIZING FIX === */
     .nav-left img {
-      height: 60px;
-      width: auto;
+      width: 500px;   /* Same visual footprint as Jake’s logo */
+      height: auto;
       display: block;
+    }
+
+    @media (max-width: 700px) {
+      .nav-left img {
+        width: 300px;  /* Mobile-friendly */
+      }
     }
 
     .nav-center {
