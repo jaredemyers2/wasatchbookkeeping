@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,7 +21,11 @@
       --white: #fff;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Open Sans', sans-serif;
@@ -30,7 +35,7 @@
       scroll-behavior: smooth;
     }
 
-    /* === Header === */
+    /* ====== HEADER ====== */
     header {
       background-color: var(--white);
       border-bottom: 1px solid var(--light-bg);
@@ -48,10 +53,17 @@
       margin: 0 auto;
     }
 
+    /* Match home page logo sizing */
     .nav-left img {
-      height: 60px;
-      width: auto;
+      width: 500px;
+      height: auto;
       display: block;
+    }
+
+    @media (max-width: 700px) {
+      .nav-left img {
+        width: 300px;
+      }
     }
 
     .nav-center {
@@ -87,15 +99,25 @@
     }
 
     @media (max-width: 900px) {
-      .nav-container { flex-direction: column; gap: 0.8rem; }
-      .nav-center { flex-wrap: wrap; justify-content: center; gap: 1rem; }
-      .nav-right { margin-top: 0.5rem; }
+      .nav-container {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .nav-center {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .nav-right {
+        margin-top: 0.5rem;
+      }
     }
 
-    /* === Pricing Section === */
+    /* ====== PRICING SECTION ====== */
     .pricing-section {
       padding: 5rem 8%;
-      padding-bottom: 5rem;
       background-color: var(--white);
       text-align: center;
       min-height: calc(100vh - 140px);
@@ -108,12 +130,10 @@
       font-size: 2rem;
     }
 
-    .pricing-section h3 {
-      color: var(--brand-teal);
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-      font-weight: 700;
-      text-align: center;
+    .pricing-section p.lead {
+      font-size: 1.1rem;
+      color: var(--charcoal-blue);
+      margin-bottom: 3rem;
     }
 
     .pricing-card {
@@ -132,11 +152,19 @@
       box-shadow: 0 8px 15px rgba(47, 142, 140, 0.2);
     }
 
+    .pricing-section h3 {
+      color: var(--brand-teal);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
     .price-point {
       display: flex;
       align-items: flex-start;
-      margin-bottom: 1rem;
       gap: 0.8rem;
+      margin-bottom: 1rem;
       font-size: 1rem;
       color: var(--text-gray);
     }
@@ -170,10 +198,11 @@
     }
 
     @media (max-width: 600px) {
-      .pricing-card { padding: 1.5rem; }
+      .pricing-card {
+        padding: 1.5rem;
+      }
     }
 
-    /* Match hero call button */
     .call-btn-large {
       display: inline-flex;
       align-items: center;
@@ -201,13 +230,12 @@
       padding: 1rem 1.5rem;
       border: 1px solid var(--brand-teal);
       border-radius: 6px;
-      font-size: 1rem;
       text-align: center;
       font-weight: 600;
       color: var(--charcoal-blue);
     }
 
-    /* === Contact === */
+    /* ====== CONTACT ====== */
     .contact {
       padding: 4rem 8%;
       background-color: var(--white);
@@ -224,12 +252,13 @@
 
     .contact a {
       color: var(--brand-teal);
-      text-decoration: underline;
       font-weight: 600;
-      transition: color 0.3s;
+      text-decoration: underline;
     }
 
-    .contact a:hover { color: var(--charcoal-blue); }
+    .contact a:hover {
+      color: var(--charcoal-blue);
+    }
 
     footer {
       text-align: center;
@@ -239,16 +268,16 @@
       font-size: 0.9rem;
     }
   </style>
-
 </head>
 
 <body>
 
+  <!-- ===== HEADER ===== -->
   <header>
     <div class="nav-container">
 
       <div class="nav-left">
-        <img src="WasatchBookkeepingLogo.jpg" alt="Wasatch Bookkeeping Logo" style="height: 60px; width: auto;">
+        <img src="WasatchBookkeepingLogo.jpg" alt="Wasatch Bookkeeping Logo">
       </div>
 
       <nav class="nav-center">
@@ -268,60 +297,60 @@
     </div>
   </header>
 
+  <!-- ===== PRICING ===== -->
   <section id="pricing" class="pricing-section">
-      <h2>Pricing</h2>
-      <p style="font-size: 1.1rem; color: var(--charcoal-blue); margin-bottom: 3rem;">
-        Our packages are designed to give you peace of mind and tax-ready financials every month.
-      </p>
+    <h2>Pricing</h2>
+    <p class="lead">Our packages are designed to give you peace of mind and tax-ready financials every month.</p>
 
-      <div class="pricing-card">
-        <h3>All Monthly Packages Include:</h3>
+    <div class="pricing-card">
+      <h3>All Monthly Packages Include:</h3>
 
-        <div class="price-point">
-          <i class="fa-solid fa-check-circle"></i>
-          <strong>Weekly Transaction Categorization</strong> (Prevents guessing what a charge was for a month later).
-        </div>
-
-        <div class="price-point">
-          <i class="fa-solid fa-check-circle"></i>
-          <strong>Monthly Account Reconciliations</strong> (All Bank & Credit Card Accounts).
-        </div>
-
-        <div class="price-point">
-          <i class="fa-solid fa-check-circle"></i>
-          <strong>Monthly Financial Statements</strong> (P&L, Balance Sheet) for easy comparison and tax readiness).
-        </div>
-
-        <div class="price-point">
-          <i class="fa-solid fa-check-circle"></i>
-          <strong>Dedicated Weekly Service Day</strong> with Proactive Communication (“Your day” means guaranteed attention and no chasing).
-        </div>
-
-        <div class="price-highlight">
-          Packages Start at <br> 
-          <span>$200/month</span>
-        </div>
-
-        <div class="quote-info">
-          **Your final rate is based on your account volume and business complexity.**  
-          More transactions or complex features (like class tracking for multiple projects) may increase the monthly fee.
-        </div>
+      <div class="price-point">
+        <i class="fa-solid fa-check-circle"></i>
+        <strong>Weekly Transaction Categorization</strong> (No more guessing what a charge was for a month later.)
       </div>
 
-      <p style="margin-top: 2.5rem; font-size: 1.1rem;">
-        Call now for a free quote.
-      </p>
+      <div class="price-point">
+        <i class="fa-solid fa-check-circle"></i>
+        <strong>Monthly Account Reconciliations</strong> (All Bank & Credit Card Accounts)
+      </div>
 
-      <a href="https://calendly.com/jaredemyers/needs-assessment" class="call-btn-large">
-        <i class="fa-solid fa-phone"></i> BOOK A CALL WITH JARED
-      </a>
+      <div class="price-point">
+        <i class="fa-solid fa-check-circle"></i>
+        <strong>Monthly Financial Statements</strong> (P&L, Balance Sheet)
+      </div>
+
+      <div class="price-point">
+        <i class="fa-solid fa-check-circle"></i>
+        <strong>Dedicated Weekly Service Day</strong> with proactive communication (“Your day” means guaranteed attention)
+      </div>
+
+      <div class="price-highlight">
+        Packages Start at <br>
+        <span>$200/month</span>
+      </div>
+
+      <div class="quote-info">
+        Your final rate is based on your account volume and business complexity.
+        More transactions or advanced features (like class tracking) may increase the monthly fee.
+      </div>
+    </div>
+
+    <p style="margin-top: 2.5rem; font-size: 1.1rem;">
+      Call now for a free quote.
+    </p>
+
+    <a href="https://calendly.com/jaredemyers/needs-assessment" class="call-btn-large">
+      <i class="fa-solid fa-phone"></i> BOOK A CALL WITH JARED
+    </a>
   </section>
 
+  <!-- ===== CONTACT ===== -->
   <section id="contact" class="contact">
     <h3>Let’s Connect</h3>
     <p>Contact me directly:</p>
     <p>801-830-1787</p>
-    <p>Email : <a href="mailto:jared@wasatchbookkeeping.com">jared@wasatchbookkeeping.com</a></p>
+    <p>Email: <a href="mailto:jared@wasatchbookkeeping.com">jared@wasatchbookkeeping.com</a></p>
   </section>
 
   <footer>
@@ -329,4 +358,5 @@
   </footer>
 
 </body>
+
 </html>
