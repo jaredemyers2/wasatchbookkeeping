@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free AI Transaction Review Prompt for Bookkeepers</title>
+
+  <meta name="description" content="A free AI transaction review prompt for professional bookkeepers to reduce month-end time without letting AI touch their books.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    :root {
+      --charcoal-blue: #2B3D50;
+      --brand-teal: #2f8e8c;
+      --light-bg: #f1f5f7;
+      --text-gray: #4A5568;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--white);
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--white);
+      padding: 20px 24px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    header .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--charcoal-blue);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 56px 24px;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--charcoal-blue);
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 56px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .hero {
+      background: var(--light-bg);
+      padding: 48px;
+      border-radius: 10px;
+    }
+
+    .subheadline {
+      font-size: 1.15rem;
+      margin-bottom: 32px;
+    }
+
+    .callout {
+      background: var(--white);
+      padding: 24px;
+      border-radius: 8px;
+      margin: 32px 0;
+      border-left: 5px solid var(--brand-teal);
+    }
+
+    .divider {
+      height: 1px;
+      background: #e2e8f0;
+      margin: 48px 0;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 56px;
+    }
+
+    .cta a {
+      display: inline-block;
+      background: var(--brand-teal);
+      color: var(--white);
+      padding: 16px 32px;
+      border-radius: 6px;
+      font-size: 1.05rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .cta a:hover {
+      background: #267a78;
+    }
+
+    .microcopy {
+      font-size: 0.9rem;
+      margin-top: 10px;
+      color: #64748b;
+    }
+
+    .faq {
+      background: var(--light-bg);
+      padding: 40px;
+      border-radius: 10px;
+      margin-top: 64px;
+    }
+
+    .faq h3 {
+      color: var(--charcoal-blue);
+      margin-bottom: 8px;
+    }
+
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: var(--charcoal-blue);
+      color: var(--white);
+      text-align: center;
+      padding: 12px;
+      font-size: 0.95rem;
+    }
+
+    .sticky-cta a {
+      color: var(--brand-teal);
+      font-weight: 600;
+      margin-left: 8px;
+      text-decoration: none;
+    }
+
+    footer {
+      background: var(--brand-teal);
+      color: var(--white);
+      text-align: center;
+      padding: 32px 16px;
+      font-size: 0.9rem;
+      margin-top: 80px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Wasatch Bookkeeping</div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <h1>Cut Your Month-End Bookkeeping Time Without Letting AI Touch Your Books</h1>
+    <p class="subheadline">
+      A free AI transaction review prompt built for professional bookkeepers who want to increase income per hour—without hiring staff or sacrificing accuracy.
+    </p>
+
+    <div class="callout">
+      <strong>This is for you if:</strong>
+      <ul>
+        <li>You’re an independent or freelance bookkeeper</li>
+        <li>Month-end close takes longer than it should</li>
+        <li>You’re tired of rethinking the same transactions every month</li>
+        <li>You want to raise rates but feel capped by time</li>
+      </ul>
+
+      <strong>This is not for:</strong>
+      <ul>
+        <li>DIY business owners</li>
+        <li>“AI will do my books” shortcuts</li>
+        <li>Anyone trying to remove professional judgment</li>
+      </ul>
+    </div>
+
+    <div class="cta">
+      <a href="https://YOUR-SYSTEME-OPTIN-LINK">
+        Get the Free AI Transaction Review Prompt
+      </a>
+      <div class="microcopy">
+        Built by a bookkeeper. Designed for professionals.
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <section class="faq">
+    <h3>Does this connect directly to QuickBooks?</h3>
+    <p>No. This prompt is intentionally used outside of your accounting software. Nothing touches QuickBooks unless you decide it should.</p>
+
+    <h3>Is this safe to use for client work?</h3>
+    <p>Yes. This is a review assistant, not an automation tool. You remain fully responsible for final categorization and posting.</p>
+
+    <h3>Will this replace my bookkeeping judgment?</h3>
+    <p>No. It reduces repetitive thinking and highlights patterns so you can make faster, more confident decisions.</p>
+  </section>
+
+</main>
+
+<div class="sticky-cta">
+  Want to reduce month-end workload?
+  <a href="https://YOUR-SYSTEME-OPTIN-LINK">Get the free prompt →</a>
+</div>
+
+<footer>
+  © Wasatch Bookkeeping · www.wasatchbookkeeping.com  
+  <br><br>
+  Disclaimer: This tool provides decision support only and does not replace professional bookkeeping judgment.
+</footer>
+
+</body>
+</html>
