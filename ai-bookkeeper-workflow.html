@@ -7,12 +7,10 @@
 
   <meta name="description" content="A free AI transaction review prompt for professional bookkeepers to reduce month-end time without letting AI touch their books.">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
@@ -34,14 +32,17 @@
 
     header {
       background: var(--white);
-      padding: 20px 24px;
+      padding: 15px 24px;
       border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
     }
 
-    header .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      color: var(--charcoal-blue);
+    /* Logo Styling */
+    header .logo img {
+      height: 60px; /* Adjust this height to fit your logo perfectly */
+      width: auto;
+      display: block;
     }
 
     .container {
@@ -152,6 +153,7 @@
       text-align: center;
       padding: 12px;
       font-size: 0.95rem;
+      z-index: 1000;
     }
 
     .sticky-cta a {
@@ -168,6 +170,7 @@
       padding: 32px 16px;
       font-size: 0.9rem;
       margin-top: 80px;
+      padding-bottom: 80px; /* Space for sticky CTA */
     }
   </style>
 </head>
@@ -175,7 +178,9 @@
 <body>
 
 <header>
-  <div class="logo">Wasatch Bookkeeping</div>
+  <a href="https://www.wasatchbookkeeping.com" class="logo">
+    <img src="WasatchBookkeepingLogo.jpg" alt="Wasatch Bookkeeping Logo">
+  </a>
 </header>
 
 <main class="container">
