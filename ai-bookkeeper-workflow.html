@@ -46,10 +46,19 @@
       overflow: hidden;
     }
 
-    /* LEFT IMAGE */
+    /* LEFT IMAGE (true <img>) */
     .optin-image {
-      background: url('TheAITransactionReviewPromptOptIn3.png') center / cover no-repeat;
-      min-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+    }
+
+    .optin-image img {
+      width: 500px;
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
 
     /* RIGHT CONTENT */
@@ -138,7 +147,7 @@
       }
 
       .optin-image {
-        min-height: 260px;
+        padding: 24px 20px;
       }
 
       .optin-content {
@@ -153,7 +162,10 @@
   <div class="optin-card">
 
     <!-- LEFT: IMAGE -->
-    <div class="optin-image"></div>
+    <div class="optin-image">
+      <img src="TheAITransactionReviewPromptOptIn3.png"
+           alt="AI Transaction Review Prompt mockup">
+    </div>
 
     <!-- RIGHT: CONTENT -->
     <div class="optin-content">
@@ -184,3 +196,4 @@
 
 </body>
 </html>
+```
