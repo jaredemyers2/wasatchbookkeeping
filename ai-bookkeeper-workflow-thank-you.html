@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Check Your Email</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --charcoal-blue: #2B3D50;
+      --brand-teal: #2f8e8c;
+      --light-bg: #f1f5f7;
+      --text-gray: #4A5568;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--light-bg);
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text-gray);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .thankyou-card {
+      background: var(--white);
+      max-width: 760px;
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      padding: 56px 48px;
+      text-align: center;
+    }
+
+    .status {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--brand-teal);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--charcoal-blue);
+      margin: 0 0 20px 0;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .instructions {
+      background: var(--light-bg);
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-bottom: 36px;
+      text-align: left;
+    }
+
+    .instructions h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--charcoal-blue);
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .instructions ul {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    .instructions li {
+      margin-bottom: 10px;
+    }
+
+    .expectation {
+      margin-top: 32px;
+      text-align: left;
+    }
+
+    .expectation p {
+      margin-bottom: 12px;
+    }
+
+    .microcopy {
+      margin-top: 36px;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    @media (max-width: 700px) {
+      .thankyou-card {
+        padding: 40px 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="thankyou-card">
+
+    <div class="status">SUCCESS</div>
+
+    <h1>Check Your Email</h1>
+
+    <p class="intro">
+      Your request was successful.  
+      I’ve just sent the AI Transaction Review Prompt to the email address you entered.
+    </p>
+
+    <div class="instructions">
+      <h2>What to Do Next</h2>
+      <ul>
+        <li>Check your inbox for an email from me</li>
+        <li>If you don’t see it within 2–3 minutes, check spam or promotions</li>
+        <li>Add the sender to your contacts so future emails land correctly</li>
+      </ul>
+    </div>
+
+    <div class="expectation">
+      <p>
+        The prompt is delivered by email on purpose.
+      </p>
+      <p>
+        This ensures you always have access to the latest version — and lets me
+        share additional guidance on using it safely and professionally.
+      </p>
+      <p>
+        Over the next few days, I’ll also walk you through how this fits into a
+        larger workflow used by professional bookkeepers to reduce month-end load
+        without risky automation.
+      </p>
+    </div>
+
+    <div class="microcopy">
+      Built by a practicing bookkeeper.  
+      No auto-posting. No shortcuts. Unsubscribe anytime.
+    </div>
+
+  </div>
+
+</body>
+</html>
